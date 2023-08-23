@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "2c980f61-d3e2-4733-99d6-9abc34c0fd1a",
+		"name": "Note API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28843643"
+	},
+	"item": [
+		{
+			"name": "Get CSRF Tocken",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/app/csrf_cookie/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"csrf_cookie",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Authenticated",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/app/checkauth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"checkauth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-CSRFToken",
+						"value": "iAyjMvKv8HlAivysu6LlA4f6T22r3uNR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"puspendusahoo786@gmail.com\",\r\n    \"password\" : \"rani12345\",\r\n    \"confirm_password\" : \"rani12345\",\r\n    \"name\" : \"rani\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/app/registration/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"registration",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-CSRFToken",
+						"value": "xIVxJcfsZq2sXWkGmnB7nClCOM3MPP9a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"puspendusahoo786@gmail.com\",\r\n    \"password\" : \"rani123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/app/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/account/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"account",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-CSRFToken",
+						"value": "iAyjMvKv8HlAivysu6LlA4f6T22r3uNR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/app/delete/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-CSRFToken",
+						"value": "5ReZYxnCcsg1Tjy2jNLebreQ8t61Tvtd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"old_password\" : \"rani12345\",\r\n    \"new_password\" : \"rani123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/account/change_password/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"account",
+						"change_password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-CSRFToken",
+						"value": "iAyjMvKv8HlAivysu6LlA4f6T22r3uNR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/account/logout/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"account",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /notes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-CSRFToken",
+						"value": "iAyjMvKv8HlAivysu6LlA4f6T22r3uNR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Note3\",\r\n    \"content\":\"content3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/POST/notes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"POST",
+						"notes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/GET/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"GET",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /notes/{noteId}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/GET/notes/2/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"GET",
+						"notes",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /notes/{noteId}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-CSRFToken",
+						"value": "iAyjMvKv8HlAivysu6LlA4f6T22r3uNR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Note4\",\r\n    \"content\":\"content4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/PUT/notes/2/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"PUT",
+						"notes",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /notes/{noteId}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-CSRFToken",
+						"value": "iAyjMvKv8HlAivysu6LlA4f6T22r3uNR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/DELETE/notes/2/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"DELETE",
+						"notes",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
